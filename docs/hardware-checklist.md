@@ -10,6 +10,10 @@ The physical hardware has not been purchased yet. Use this exact baseline so the
 
 Avoid a bare RGB LED for the first test unless you also buy three 220–330 Ω resistors. Avoid a WS2812/NeoPixel strip for this firmware: it uses three independent PWM channels instead of the one-wire addressable protocol.
 
+## Wiring diagram
+
+![ESP32 RGB wiring diagram](wiring-diagram.svg)
+
 ## Check before powering
 
 1. Identify the module's common pin with its product diagram or a multimeter. The baseline is common cathode, connected to **GND**.
@@ -29,4 +33,5 @@ Before mounting the light, test the three reference commands in a dim room:
 ```
 
 Then send `demo`. The firmware runs low, medium and high reference states, followed by a continuous rise/fall sweep. Record the physical result after the board and module arrive; the MP4 in `docs/continuous-load-demo.mp4` is the software preview, not a camera recording of the LED.
+
 
