@@ -72,8 +72,7 @@ void handleLine(String line) {
 void readSerialNonBlocking() {
   while (Serial.available() > 0) {
     char c = (char)Serial.read();
-    if (c == '
-' || c == '\r') {
+    if (c == '\n' || c == '\r') {
       if (serialLine.length() > 0) {
         handleLine(serialLine);
         serialLine = "";
@@ -143,6 +142,4 @@ void loop() {
   setRGB(r, g, b);
   delay(UPDATE_MS);
 }
-
-
 
