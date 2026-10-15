@@ -22,6 +22,8 @@ Suggested wiring for the baseline module:
 | B | GPIO 27 |
 | common cathode / GND | GND |
 
+![ESP32 RGB wiring diagram](docs/wiring-diagram.svg)
+
 For a common-anode module, set `COMMON_ANODE` to `true` in `firmware/ComputationalRespiration.ino` and connect the common pin to 3V3. Do not connect an unknown module until its pinout and resistor arrangement are confirmed.
 
 The full purchase and bench checklist is in [docs/hardware-checklist.md](docs/hardware-checklist.md).
@@ -62,5 +64,6 @@ The generated files are `docs/demo-trace.csv` and `docs/continuous-load-demo.mp4
 | Breathing period | 5.1 s | 3.5 s | 2.0 s |
 
 The firmware accepts every value between 0 and 100, so the three states are reference points in one continuous response.
+
 
 
