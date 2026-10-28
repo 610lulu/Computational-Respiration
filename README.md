@@ -65,5 +65,75 @@ The generated files are `docs/demo-trace.csv` and `docs/continuous-load-demo.mp4
 
 The firmware accepts every value between 0 and 100, so the three states are reference points in one continuous response.
 
+## Test
+
+## 第一步：连接4根线
+
+先不要给 ESP32 通电。
+
+| ESP32 DevKit V1 | KY-016 RGB LED模块 | 线的颜色（建议） |
+| --------------- | ---------------- | -------- |
+| GPIO 25         | R（RED）           | &#x20;红色 |
+| GPIO 26         | G（GREEN）         | &#x20;绿色 |
+| GPIO 27         | B（BLUE）          | &#x20;蓝色 |
+| GND             | GND（−）           | &#x20;黑色 |
+
+接线关系
+
+逻辑示意图：引脚位置不代表开发板的实际物理位置。
+
+你可以采用两种接线方式：
+
+- 直接连接： 如果ESP32和LED模块都已经焊有公排针，使用4根母对母杜邦线。
+- 面包板连接： 将模块插入面包板上不同的电气连接排，再用杜邦线连接ESP32。
+
+如果你的KY-016模块已经自带合适的限流电阻，就不需要再串联电阻。如果没有，每个R/G/B通道都要串联一个220–330Ω电阻。
+
+注意：不需要把LED模块接到ESP32的5V或者3V3引脚。按照实际模块标注确认4个引脚，不要仅凭照片判断左右顺序。
+
+## 第二步：上传GitHub程序
+
+打开原仓库的完整程序：
+
+[ComputationalRespiration.ino](https://github.com/610lulu/Computational-Respiration/blob/main/firmware/ComputationalRespiration.ino?utm_source=chatgpt.com)
+
+在电脑上打开 Arduino IDE：
+
+1. 安装 Espressif 的 ESP32 开发板软件包。
+2. 使用USB数据线连接ESP32。
+3. 开发板选择 `ESP32 Dev Module`。
+4. 选择对应的串口。
+5. 打开完整的 `.ino` 文件，点击 Upload 上传。
+
+现有程序使用的就是 GPIO 25、26、27，因此无需修改引脚定义。
+
+## 第三步：测试三种灯光
+
+上传成功后，打开 Arduino IDE 的 Serial Monitor（串口监视器）。
+
+将波特率设置为 `115200`，行结束符设置为 `Newline`。
+
+灯光测试参考
+
+LOWMEDIUMHIGH
+
+LOW 低负载
+
+串口输入
+
+# 20
+
+&#x20;复制
+
+偏暖白、较暗、慢呼吸
+
+基础亮度 约38% · 呼吸周期 约5.1秒
+
+参考示意，实际LED颜色及明暗还受硬件影响。每次向串口单独发送一个数值。
+
+你也可以输入 `demo`，程序会自动循环展示负载变化。
+
+
+
 
 
