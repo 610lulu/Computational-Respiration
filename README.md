@@ -15,14 +15,9 @@ This repository targets the following purchase configuration:
 
 Suggested wiring for the baseline module:
 
-| RGB module | ESP32 DevKit |
-| --- | --- |
-| R | GPIO 25 |
-| G | GPIO 26 |
-| B | GPIO 27 |
-| common cathode / GND | GND |
 <img width="1021" height="444" alt="1193370e1658ac36f5a764323a2465f4" src="https://github.com/user-attachments/assets/a812cb36-da19-43e1-a4a5-f78a69e226ca" />
 
+或者：
 ![ESP32 RGB wiring diagram](docs/wiring-diagram.svg)
 
 For a common-anode module, set `COMMON_ANODE` to `true` in `firmware/ComputationalRespiration.ino` and connect the common pin to 3V3. Do not connect an unknown module until its pinout and resistor arrangement are confirmed.
