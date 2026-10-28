@@ -65,7 +65,8 @@ The generated files are `docs/demo-trace.csv` and `docs/continuous-load-demo.mp4
 
 The firmware accepts every value between 0 and 100, so the three states are reference points in one continuous response.
 
-## Test
+## Demo Test
+<img width="1279" height="409" alt="{9030C6CB-DF49-42EF-8B56-2A238687708F}" src="https://github.com/user-attachments/assets/5683c324-9885-4093-828d-2d143769a6c0" />
 
 ## 第一步：连接4根线
 
